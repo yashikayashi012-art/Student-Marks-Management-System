@@ -1,11 +1,23 @@
 name = input("Enter student name: ")
 
-marks1 = int(input("Enter marks in Subject 1: "))
-marks2 = int(input("Enter marks in Subject 2: "))
-marks3 = int(input("Enter marks in Subject 3: "))
+marks = []
 
-total = marks1 + marks2 + marks3
-average = total / 3
+for i in range(1, 4):
+    while True:
+        try:
+            mark = int(input(f"Enter marks for Subject {i} (0-100): "))
+
+            if 0 <= mark <= 100:
+                marks.append(mark)
+                break
+            else:
+                print("Invalid marks! Enter a value between 0 and 100.")
+
+        except ValueError:
+            print("Please enter a valid whole number.")
+
+total = sum(marks)
+average = total / len(marks)
 
 print("\n--- Student Report ---")
 print("Student Name:", name)
