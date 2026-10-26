@@ -34,3 +34,8 @@ elif average >= 35:
     print("Grade: D")
 else:
     print("Grade: F")
+
+if average >= 35:
+    print("Result: PASS")
+else:
+    print("Result: FAIL")
